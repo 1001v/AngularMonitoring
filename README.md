@@ -25,18 +25,18 @@ And this code in place you want monitoring to be (All ```<script>``` data can be
 
 ```html
 <ul class="list-unstyled" ng-app="AngularMonitoring" ng-controller="MonitoringController" ng-cloak>
-   <li class="list-group-item" ng-repeat="(server, info) in servers">
-      <h5>
-         <a ng-if="info.map" class="glyphicon glyphicon-globe" target="_blank" ng-href="{{info.map}}"></a> 
-         <strong ng-bind="server"></strong> 
-         <span ng-if="info.badge" class="label label-success" ng-bind="info.badge"></span><span class="pull-right" ng-bind-html="info.label"></span>
-      </h5>
-      <div class="progress">
-         <div class="progress-bar" role="progressbar" ng-class="info.class"
-            aria-valuemin="0" aria-valuemax="100" ng-style="{'width': (info.width + '%')}">
-         </div>
-      </div>
-   </li>
+	<li class="list-group-item" ng-repeat="(server, info) in servers">
+		<h5>
+			<a ng-if="info.map" class="glyphicon glyphicon-globe" target="_blank" ng-href="{{info.map}}"></a> 
+			<strong ng-bind="server"></strong> 
+			<span ng-if="info.badge" class="label label-success" ng-bind="info.badge"></span><span class="pull-right" ng-bind-html="info.label"></span>
+		</h5>
+		<div class="progress">
+			<div class="progress-bar" role="progressbar" ng-class="info.class"
+				aria-valuemin="0" aria-valuemax="100" ng-style="{'width': (info.width + '%')}">
+			</div>
+		</div>
+	</li>
 </ul>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -45,84 +45,84 @@ And this code in place you want monitoring to be (All ```<script>``` data can be
 <!-- AngularJS -->
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.29/angular.min.js"></script>
 <script type="text/javascript">
-   angular.module('AngularMonitoring', [])
-   .controller('MonitoringController', function($scope, $http, $interval, $sce){
-   	// Settings
-   	
-   	// AJAX request frequency seconds (don't use faster then 10 seconds for external query api)
-   	var interval = 10;
-   	// Server list
-   	
-   	$scope.servers = {
-   	// Just list all your servers like this
-   		// Server name
-   		'Owlcraft': {
-   			// Server adress
-   			'IP':   'owlcraft.ru',
-   			// Server port
-   			'port': '25565',
-   			// Server map url (not necessarily to add)
-   			'map':  'http://classic.map.owlcraft.ru/',
-   			// Server version badge (not necessarily to add)
-   			'badge': '1.9'
-   		},
-   		'Owltech': {
-   			'IP':   '212.3.145.109',
-   			'port': '25566'
-   		}
-   	};
-   	// End settings
-   
-   	var getWidth = function(server) {
-   		return Math.round((($scope.servers[server].data.players.online * 1.0) / $scope.servers[server].data.players.max) * 100);
-   	};
-   	
-   	var getLabel = function(server) {
-   		return $sce.trustAsHtml($scope.servers[server].data.players.online + ' / ' + $scope.servers[server].data.players.max);
-   	};
-   	
-   	var getClass = function(server) {
-   		if ($scope.servers[server].width < 50) 
-   			return 'progress-bar-success';
-   		else if ($scope.servers[server].width < 80)
-   			return 'progress-bar-warning';
-   		else
-   			return 'progress-bar-danger';
-   	};
-   	
-   	$scope.query = function(server, info){
-   		
-   		$http.get('http://api.minetools.eu/ping/' + info.IP + '/' + info.port, {timeout: interval * 1000})
-   		.then(function(response){
-   			$scope.servers[server].data = response.data;
-   			if (typeof response.data.error === 'undefined') {
-   				$scope.servers[server].label = getLabel(server); 
-   				$scope.servers[server].width = getWidth(server);
-   				$scope.servers[server].class = getClass(server);
-   			} else {
-   				$scope.servers[server].label = $sce.trustAsHtml('<span class="label label-danger">OFFLINE</span>'); 
-   				$scope.servers[server].width = 100;
-   				$scope.servers[server].class = 'progress-bar-danger progress-bar-striped active';
-   			}
-   		},
-   		function(){
-   			$scope.servers[server].data = {};
-   			$scope.servers[server].label = $sce.trustAsHtml('<span class="label label-warning" title="Сервис мониторинга не отвечает">N/A</span>'); 
-   			$scope.servers[server].width = 100;
-   			$scope.servers[server].class = 'progress-bar-warning progress-bar-striped active';
-   		});
-   	};
-   	
-   	$scope.queryAll = function() {
-   		for (var server in $scope.servers) {
-   			$scope.query(server, $scope.servers[server]);
-   		}
-   	};
-   	
-   	$scope.queryAll();
-   	$interval($scope.queryAll, interval * 1000);
-   	
-   });
+	angular.module('AngularMonitoring', [])
+	.controller('MonitoringController', function($scope, $http, $interval, $sce){
+	 // Settings
+	
+	 // AJAX request frequency seconds (don't use faster then 10 seconds for external query api)
+	 var interval = 10;
+	 // Server list
+	
+	 $scope.servers = {
+	 // Just list all your servers like this
+	     // Server name
+	     'Owlcraft': {
+	         // Server adress
+	         'IP':   'owlcraft.ru',
+	         // Server port
+	         'port': '25565',
+	         // Server map url (not necessarily to add)
+	         'map':  'http://classic.map.owlcraft.ru/',
+	         // Server version badge (not necessarily to add)
+	         'badge': '1.9'
+	     },
+	     'Owltech': {
+	         'IP':   '212.3.145.109',
+	         'port': '25566'
+	     }
+	 };
+	 // End settings
+	
+	 var getWidth = function(server) {
+	     return Math.round((($scope.servers[server].data.players.online * 1.0) / $scope.servers[server].data.players.max) * 100);
+	 };
+	
+	 var getLabel = function(server) {
+	     return $sce.trustAsHtml($scope.servers[server].data.players.online + ' / ' + $scope.servers[server].data.players.max);
+	 };
+	
+	 var getClass = function(server) {
+	     if ($scope.servers[server].width < 50) 
+	         return 'progress-bar-success';
+	     else if ($scope.servers[server].width < 80)
+	         return 'progress-bar-warning';
+	     else
+	         return 'progress-bar-danger';
+	 };
+	
+	 $scope.query = function(server, info){
+	
+	     $http.get('http://api.minetools.eu/ping/' + info.IP + '/' + info.port, {timeout: interval * 1000})
+	     .then(function(response){
+	         $scope.servers[server].data = response.data;
+	         if (typeof response.data.error === 'undefined') {
+	             $scope.servers[server].label = getLabel(server); 
+	             $scope.servers[server].width = getWidth(server);
+	             $scope.servers[server].class = getClass(server);
+	         } else {
+	             $scope.servers[server].label = $sce.trustAsHtml('<span class="label label-danger">OFFLINE</span>'); 
+	             $scope.servers[server].width = 100;
+	             $scope.servers[server].class = 'progress-bar-danger progress-bar-striped active';
+	         }
+	     },
+	     function(){
+	         $scope.servers[server].data = {};
+	         $scope.servers[server].label = $sce.trustAsHtml('<span class="label label-warning" title="Сервис мониторинга не отвечает">N/A</span>'); 
+	         $scope.servers[server].width = 100;
+	         $scope.servers[server].class = 'progress-bar-warning progress-bar-striped active';
+	     });
+	 };
+	
+	 $scope.queryAll = function() {
+	     for (var server in $scope.servers) {
+	         $scope.query(server, $scope.servers[server]);
+	     }
+	 };
+	
+	 $scope.queryAll();
+	 $interval($scope.queryAll, interval * 1000);
+	
+	});
 </script>
 ```
 
