@@ -146,5 +146,5 @@ $scope.servers = {
 		'port': '25566'
 	}
 };
-				// End settings
+// End settings
 ```
