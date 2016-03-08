@@ -38,7 +38,6 @@ And this code in place you want monitoring to be (All ```<script>``` data can be
 				</div>
 			</li>
 		</ul>
-		<!-- Скрипты зависимости -->
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 		<!-- Latest compiled and minified JavaScript -->
@@ -50,7 +49,7 @@ And this code in place you want monitoring to be (All ```<script>``` data can be
 			.controller('MonitoringController', function($scope, $http, $interval, $sce){
 				// Settings
 				
-				// AJAX request frequency (don't use faster then 10 seconds for external query api)
+				// AJAX request frequency seconds (don't use faster then 10 seconds for external query api)
 				var interval = 10;
 				// Server list
 				
