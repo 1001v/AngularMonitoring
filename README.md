@@ -15,12 +15,6 @@ This is simple AngularJS + Bootstrap code, which includes all requirements from 
 Place this code in ```<head>``` of your page:
 ```html
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
-<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-<![endif]-->
 ```
 
 And this code in place you want monitoring to be (All ```<script>``` data can be placed at the bottom of page):
