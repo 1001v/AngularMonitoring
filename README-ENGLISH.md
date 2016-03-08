@@ -1,6 +1,6 @@
 # AngularMonitoring
 
-This is simple AngularJS + Bootstrap code, which includes all requirements from google and bootstrap remote servers. It also uses 3rd party query API service http://api.minetools.eu/. Advanced users can use all external data from their own servers, but this release designed for one copy-paste installation.
+This is simple AngularJS + Bootstrap code, which includes all requirements from google and bootstrap remote servers. It also uses 3rd party query API service http://api.minetools.eu/. Advanced users can use all external data from their own servers, but this release is made for the most simple and quick installation in two clicks.
 
 ![Alt text](http://i.imgur.com/1QDJJEC.png)
 
@@ -9,7 +9,7 @@ This is simple AngularJS + Bootstrap code, which includes all requirements from 
 - AJAX
 - easy to castomize
 - bootstrap and responsible design
-- you can add icon for dynmap and badge for game version in config
+- you can add icon for dynmap and badge for game version in settings
 
 ## Installation
 Place this code in ```<head>``` of your page:
