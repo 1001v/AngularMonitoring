@@ -107,7 +107,7 @@ And this code in place you want monitoring to be (All ```<script>``` data can be
 	     },
 	     function(){
 	         $scope.servers[server].data = {};
-	         $scope.servers[server].label = $sce.trustAsHtml('<span class="label label-warning" title="Сервис мониторинга не отвечает">N/A</span>'); 
+	         $scope.servers[server].label = $sce.trustAsHtml('<span class="label label-warning" title="Monitoring service not available">N/A</span>'); 
 	         $scope.servers[server].width = 100;
 	         $scope.servers[server].class = 'progress-bar-warning progress-bar-striped active';
 	     });
@@ -146,5 +146,4 @@ $scope.servers = {
 		'port': '25566'
 	}
 };
-// End settings
 ```
