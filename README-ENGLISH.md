@@ -143,3 +143,6 @@ $scope.servers = {
 	}
 };
 ```
+## To do:
+- add php query script
+- create own css to prevent conflicts
