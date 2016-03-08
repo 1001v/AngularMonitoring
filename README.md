@@ -2,7 +2,7 @@
 
 This is simple AngularJS + Bootstrap code, which includes all requirements from google and bootstrap remote servers. It also uses 3rd party query API service http://api.minetools.eu/. Advanced users can use all external data from their own servers, but this release designed for one copy-paste installation.
 
-![Alt text](http://i.imgur.com/wtvwsON.png)
+![Alt text](http://i.imgur.com/1QDJJEC.png)
 
 ## Features: 
 - extremely simple to install
