@@ -128,7 +128,7 @@ And this code in place you want monitoring to be (All ```<script>``` data can be
 ```
 
 Now just add your servers in list here:
-```html
+```javascript
 				$scope.servers = {
 				// Just list all your servers like this
 					// Server name
