@@ -7,7 +7,7 @@ This is simple AngularJS + Bootstrap code, which includes all requirements from 
 ## Features: 
 - extremely simple to install
 - AJAX
-- easy to castomize
+- easy to customize
 - bootstrap and responsible design
 - you can add icon for dynmap and badge for game version in settings
 
