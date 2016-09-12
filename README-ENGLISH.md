@@ -58,7 +58,7 @@ And this code in place you want monitoring to be (All ```<script>``` data can be
 	         // Server port
 	         'port': '25565',
 	         // Server map url (not necessarily to add)
-	         'map':  'http://classic.map.owlcraft.ru/',
+	         'map':  'https://classic.map.owlcraft.ru/',
 	         // Server version badge (not necessarily to add)
 	         'badge': '1.9'
 	     },

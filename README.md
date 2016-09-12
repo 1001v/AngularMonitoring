@@ -90,7 +90,7 @@
 	
 	 $scope.query = function(server, info){
 	
-	     $http.get('http://api.minetools.eu/ping/' + info.IP + '/' + info.port, {timeout: interval * 1000})
+	     $http.get('https://api.minetools.eu/ping/' + info.IP + '/' + info.port, {timeout: interval * 1000})
 	     .then(function(response){
 	         $scope.servers[server].data = response.data;
 	         if (typeof response.data.error === 'undefined') {
